@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>データ表示</title>
+	<style>
+.fade-enter-active, .fade-leave-active {
+	transition: opacity .5s
+}
+.fade-enter, .fade-leave-to {
+	opacity: 0
+}
+	</style>
+	<link rel="stylesheet" href="animation.css">
+	<link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="demo">
+	<button v-on:click="show = !show">
+		Toggle
+	</button>
+	<transition name="fade">
+		<p v-if="show">hello</p>
+	</transition>
+</div>
+<div id="example-2">
+	<button @click="show = !show">Toggle show</button>
+	<transition name="bounce">
+		<p v-if="show">Look at me!</p>
+	</transition>
+</div>
+<div id="example-3">
+	<button @click="show = !show">
+		Toggle render
+	</button>
+	<transition
+		name="custom-classes-transition"
+		enter-active-class="animated tada"
+		leave-active-class="animated bounceOutRight"
+	>
+		<p v-if="show">hello</p>
+	</transition>
+</div>
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="./app_animation.js"></script>
+
+</body>
+</html>
